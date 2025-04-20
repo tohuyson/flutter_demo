@@ -1,23 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/constants.dart';
-import 'package:flutter_demo/live_tracking_page.dart';
+import 'package:flutter_demo/features/app_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
-        useMaterial3: true,
-      ),
-      home: const LiveTrackingPage(),
-    );
-  }
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: AppView()));
 }

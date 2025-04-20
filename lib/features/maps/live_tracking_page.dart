@@ -41,22 +41,14 @@ class _LiveTrackingPageState extends State<LiveTrackingPage> {
       point: _sourceLocation,
       width: 24,
       height: 24,
-      child: Image.asset(
-        'assets/images/source_icon.png',
-        width: 24,
-        height: 24,
-      ),
+      child: Image.asset('assets/images/source_icon.png', width: 24, height: 24),
     );
 
     _destinationIcon = Marker(
       point: _destinationLocation,
       width: 24,
       height: 24,
-      child: Image.asset(
-        'assets/images/destination_icon.png',
-        width: 24,
-        height: 24,
-      ),
+      child: Image.asset('assets/images/destination_icon.png', width: 24, height: 24),
     );
   }
 
@@ -68,10 +60,7 @@ class _LiveTrackingPageState extends State<LiveTrackingPage> {
       setState(() {
         _currentLocation = currentLocation;
       });
-      mapController?.move(
-        LatLng(currentLocation.latitude!, currentLocation.longitude!),
-        16,
-      );
+      mapController?.move(LatLng(currentLocation.latitude!, currentLocation.longitude!), 16);
     });
     setCustomMarker();
     fetchRoute(_sourceLocation, _destinationLocation);
@@ -81,33 +70,24 @@ class _LiveTrackingPageState extends State<LiveTrackingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Live Tracking Page')),
       body: FlutterMap(
         mapController: mapController,
-        options: const MapOptions(
-          initialZoom: 16,
-        ),
+        options: const MapOptions(initialZoom: 16),
         children: [
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', // For demonstration only
           ),
           MarkerLayer(
             markers: [
-              if (_sourceIcon != null) ...[
-                _sourceIcon!,
-              ],
-              if (_destinationIcon != null) ...[
-                _destinationIcon!,
-              ],
+              if (_sourceIcon != null) ...[_sourceIcon!],
+              if (_destinationIcon != null) ...[_destinationIcon!],
               if (_currentLocation != null) ...[
                 Marker(
                   point: LatLng(_currentLocation!.latitude!, _currentLocation!.longitude!),
                   width: 24,
                   height: 24,
-                  child: Image.asset(
-                    'assets/images/current_location_icon.png',
-                    width: 24,
-                    height: 24,
-                  ),
+                  child: Image.asset('assets/images/current_location_icon.png', width: 24, height: 24),
                 ),
               ],
             ],
@@ -115,11 +95,7 @@ class _LiveTrackingPageState extends State<LiveTrackingPage> {
           PolylineLayer(
             polylines: [
               if (_polylinePoints.isNotEmpty) ...[
-                Polyline(
-                  points: _polylinePoints,
-                  strokeWidth: 2.0,
-                  color: Colors.red,
-                ),
+                Polyline(points: _polylinePoints, strokeWidth: 2.0, color: Colors.red),
               ],
             ],
           ),
