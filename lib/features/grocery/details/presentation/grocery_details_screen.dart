@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants/app_color.dart';
 import 'package:flutter_demo/constants/app_size.dart';
-import 'package:flutter_demo/features/grocery/deatils/presentation/components/grocery_cart_counter.dart';
+import 'package:flutter_demo/features/grocery/details/presentation/components/grocery_cart_counter.dart';
 import 'package:flutter_demo/features/grocery/home/presentation/providers/grocery_home_provider.dart';
 import 'package:flutter_demo/features/grocery/home/presentation/screens/components/grocery_fav_btn.dart';
 import 'package:flutter_demo/features/grocery/home/presentation/screens/components/grocery_price.dart';

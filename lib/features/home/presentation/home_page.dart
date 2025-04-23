@@ -28,6 +28,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Grocery Page'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                GoRouter.of(context).pushNamed(AppRoute.clock.name);
+              },
+              child: const Text('Clock Page'),
+            ),
           ],
         ),
       ),

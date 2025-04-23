@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/constants/app_size.dart';
-import 'package:flutter_demo/features/grocery/deatils/presentation/components/grocery_rounded_icon_btn.dart';
+import 'package:flutter_demo/features/grocery/details/presentation/components/grocery_rounded_icon_btn.dart';
 
 class GroceryCartCounter extends StatelessWidget {
   const GroceryCartCounter({super.key, required this.quantity});

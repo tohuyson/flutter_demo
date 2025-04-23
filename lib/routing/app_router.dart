@@ -1,14 +1,15 @@
 import 'package:flutter_demo/constants/app_data.dart';
-import 'package:flutter_demo/features/grocery/deatils/presentation/grocery_details_screen.dart';
+import 'package:flutter_demo/features/clock/presentation/screens/clock_page.dart';
+import 'package:flutter_demo/features/grocery/details/presentation/grocery_details_screen.dart';
 import 'package:flutter_demo/features/grocery/home/presentation/screens/grocery_home_screen.dart';
-import 'package:flutter_demo/features/home/home_page.dart';
-import 'package:flutter_demo/features/maps/live_tracking_page.dart';
+import 'package:flutter_demo/features/home/presentation/home_page.dart';
+import 'package:flutter_demo/features/maps/presentation/live_tracking_page.dart';
 import 'package:flutter_demo/models/grocery/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
-enum AppRoute { home, maps, grocery, groceryDetails }
+enum AppRoute { home, maps, grocery, groceryDetails, clock }
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -46,6 +47,11 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                       (context, animation, secondaryAnimation, child) =>
                           FadeTransition(opacity: animation, child: child),
                 ),
+          ),
+          GoRoute(
+            path: AppRoute.clock.name,
+            name: AppRoute.clock.name,
+            builder: (context, state) => const ClockPage(),
           ),
         ],
       ),
