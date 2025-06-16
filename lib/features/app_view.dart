@@ -25,7 +25,7 @@ class AppView extends ConsumerWidget {
       // ),
       theme: AppTheme.instance.themeData(context),
       darkTheme: AppTheme.instance.darkThemeData(context),
-      themeMode: appTheme.isLightTheme ? ThemeMode.dark : ThemeMode.light,
+      themeMode: appTheme.isLightTheme ? ThemeMode.light : ThemeMode.dark,
     );
   }
 }

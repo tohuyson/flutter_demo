@@ -3,14 +3,15 @@ import 'package:flutter_demo/features/clock/presentation/screens/clock_page.dart
 import 'package:flutter_demo/features/email/presentation/screens/email_screen.dart';
 import 'package:flutter_demo/features/grocery/details/presentation/grocery_details_screen.dart';
 import 'package:flutter_demo/features/grocery/home/presentation/screens/grocery_home_screen.dart';
-import 'package:flutter_demo/features/home/presentation/home_page.dart';
+import 'package:flutter_demo/features/home/presentation/screens/home_page.dart';
+import 'package:flutter_demo/features/isolate_loading/presentation/screens/isolae_loading_screen.dart';
 import 'package:flutter_demo/features/maps/presentation/live_tracking_page.dart';
 import 'package:flutter_demo/models/grocery/product.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
-enum AppRoute { home, maps, grocery, groceryDetails, clock, email }
+enum AppRoute { home, maps, grocery, groceryDetails, clock, email, isolateLoading }
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -54,6 +55,11 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             path: AppRoute.email.name,
             name: AppRoute.email.name,
             builder: (context, state) => const EmailScreen(),
+          ),
+          GoRoute(
+            path: AppRoute.isolateLoading.name,
+            name: AppRoute.isolateLoading.name,
+            builder: (context, state) => const IsolateLoadingScreen(),
           ),
         ],
       ),

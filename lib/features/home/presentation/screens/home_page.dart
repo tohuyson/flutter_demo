@@ -40,6 +40,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Email Page'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                GoRouter.of(context).pushNamed(AppRoute.isolateLoading.name);
+              },
+              child: const Text('Isolate Loading Page'),
+            ),
           ],
         ),
       ),
