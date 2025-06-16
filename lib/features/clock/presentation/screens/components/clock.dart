@@ -18,15 +18,21 @@ class Clock extends ConsumerStatefulWidget {
 
 class _ClockState extends ConsumerState<Clock> {
   DateTime _dateTime = DateTime.now();
-
+  Timer? _timer;
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _dateTime = DateTime.now();
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 
   @override
