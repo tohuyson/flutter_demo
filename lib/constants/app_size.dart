@@ -36,4 +36,10 @@ class AppSize {
     // 414 is the layout width that designer use
     return (inputWidth / 414.0) * screenWidth;
   }
+
+  bool isMobile() => screenWidth < 650;
+
+  bool isTablet() => screenWidth < 1100 && screenWidth >= 650;
+
+  bool isDesktop() => screenWidth >= 1100;
 }

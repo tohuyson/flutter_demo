@@ -1,5 +1,6 @@
 import 'package:flutter_demo/constants/app_data.dart';
 import 'package:flutter_demo/features/clock/presentation/screens/clock_page.dart';
+import 'package:flutter_demo/features/email/presentation/screens/email_screen.dart';
 import 'package:flutter_demo/features/grocery/details/presentation/grocery_details_screen.dart';
 import 'package:flutter_demo/features/grocery/home/presentation/screens/grocery_home_screen.dart';
 import 'package:flutter_demo/features/home/presentation/home_page.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 
-enum AppRoute { home, maps, grocery, groceryDetails, clock }
+enum AppRoute { home, maps, grocery, groceryDetails, clock, email }
 
 final goRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -48,10 +49,11 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                           FadeTransition(opacity: animation, child: child),
                 ),
           ),
+          GoRoute(path: AppRoute.clock.name, name: AppRoute.clock.name, builder: (context, state) => const ClockPage()),
           GoRoute(
-            path: AppRoute.clock.name,
-            name: AppRoute.clock.name,
-            builder: (context, state) => const ClockPage(),
+            path: AppRoute.email.name,
+            name: AppRoute.email.name,
+            builder: (context, state) => const EmailScreen(),
           ),
         ],
       ),

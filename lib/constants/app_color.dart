@@ -33,4 +33,14 @@ class AppColor {
   Color kClockTitleTextDarkColor = Colors.white;
 
   Color kClockShadowColor = const Color(0xFF364564);
+
+  // email
+  Color kEmailPrimaryColor = const Color(0xFF366CF6);
+  Color kEmailSecondaryColor = const Color(0xFFF5F6FC);
+  Color kEmailBgLightColor = const Color(0xFFF2F4FC);
+  Color kEmailBgDarkColor = const Color(0xFFEBEDFA);
+  Color kEmailBadgeColor = const Color(0xFFEE376E);
+  Color kEmailGrayColor = const Color(0xFF8793B2);
+  Color kEmailTitleTextColor = const Color(0xFF30384D);
+  Color kEmailTextColor = const Color(0xFF4D5875);
 }

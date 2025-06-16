@@ -34,6 +34,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Clock Page'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                GoRouter.of(context).pushNamed(AppRoute.email.name);
+              },
+              child: const Text('Email Page'),
+            ),
           ],
         ),
       ),
