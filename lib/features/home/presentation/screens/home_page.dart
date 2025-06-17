@@ -46,6 +46,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Isolate Loading Page'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                GoRouter.of(context).pushNamed(AppRoute.computeLoading.name);
+              },
+              child: const Text('Compute Loading Page'),
+            ),
           ],
         ),
       ),
